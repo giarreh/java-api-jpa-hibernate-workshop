@@ -351,10 +351,10 @@ The `ResponseEntity` object is a way of building in the response codes when we r
 
 ## Core Exercise
 
-Implement the Core Spec which can be found in the webpage here, use hibernate and other tools to do this as efficiently as possible.
+Implement the Core Spec which can be found in the webpage [here](https://boolean-uk.github.io/java-api-jpa-hibernate-workshop/), use hibernate and other tools to do this as efficiently as possible.
 
 ## Extension Exercise
 
-Extend the code from the core exercise to fully implement the Extension Spec which can be found in the webpage here.
+Extend the code from the core exercise to fully implement the Extension Spec which can be found in the webpage [here](https://boolean-uk.github.io/java-api-jpa-hibernate-workshop/extensions.html).
 
 
