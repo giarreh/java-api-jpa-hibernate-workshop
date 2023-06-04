@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Java API MVC, JPA and Hibernate Workshop - Core Criteria
+  title: Java API MVC, JPA and Hibernate Part 1 Workshop - Core Criteria
   description: |-
-  version: 0.2.2
+  version: 0.2.3
 
 servers:
   - url: http://localhost:4000
@@ -49,7 +49,7 @@ paths:
           description: The ID of the teacher to get
           required: true
           schema:
-            type: long
+            type: integer
       responses:
         200:
           content:
@@ -67,7 +67,7 @@ paths:
           description: The ID of the teacher to update
           required: true
           schema:
-            type: long
+            type: integer
       requestBody:
         content:
           application/json:
@@ -90,7 +90,7 @@ paths:
           description: The ID of the teacher to delete
           required: true
           schema:
-            type: long
+            type: integer
       responses:
         200:
           content:

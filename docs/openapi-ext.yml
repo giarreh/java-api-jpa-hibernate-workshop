@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: Java API MVC, JPA and Hibernate Workshop - Core Criteria
+  title: Java API MVC, JPA and Hibernate Part 1 Workshop - Extension Criteria
   description: |-
-  version: 0.2.2
+  version: 0.2.3
 
 servers:
   - url: http://localhost:4000
@@ -62,7 +62,7 @@ paths:
           description: The ID of the teacher to get
           required: true
           schema:
-            type: long
+            type: int
       responses:
         200:
           content:
@@ -86,7 +86,7 @@ paths:
           description: The ID of the teacher to update
           required: true
           schema:
-            type: long
+            type: int
       requestBody:
         content:
           application/json:
@@ -121,7 +121,7 @@ paths:
           description: The ID of the teacher to delete
           required: true
           schema:
-            type: long
+            type: int
       responses:
         200:
           content:
@@ -186,7 +186,7 @@ paths:
           description: The ID of the subject to get
           required: true
           schema:
-            type: long
+            type: int
       responses:
         200:
           content:
@@ -210,7 +210,7 @@ paths:
           description: The ID of the subject to update
           required: true
           schema:
-            type: long
+            type: int
       requestBody:
         content:
           application/json:
@@ -245,7 +245,7 @@ paths:
           description: The ID of the subject to delete
           required: true
           schema:
-            type: long
+            type: int
       responses:
         200:
           content:
@@ -303,6 +303,9 @@ components:
       type: object
       required: [title, level]
       properties:
+        id:
+          type: integer
+          example: 1
         title:
           type: string
           example: "Mathematics"
@@ -312,6 +315,9 @@ components:
     Subject:
       type: object
       properties:
+        id:
+          type: integer
+          example: 1
         title:
           type: string
           example: "Mathematics"
