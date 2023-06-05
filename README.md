@@ -355,6 +355,6 @@ Implement the Core Spec which can be found in the webpage [here](https://boolean
 
 ## Extension Exercise
 
-Extend the code from the core exercise to fully implement the Extension Spec which can be found in the webpage [here](https://boolean-uk.github.io/java-api-jpa-hibernate-workshop/extensions.html).
+Extend the code from the core exercise to fully implement the Extension Spec which can be found in the webpage [here](https://boolean-uk.github.io/java-api-jpa-hibernate-workshop/extension.html).
 
 
