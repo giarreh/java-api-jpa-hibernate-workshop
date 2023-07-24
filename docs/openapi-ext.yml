@@ -1,8 +1,10 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: Java API MVC, JPA and Hibernate Part 1 Workshop - Extension Criteria
-  description: |-
-  version: 0.2.3
+  description: Extension Criteria for Java MVC JPA and Hibernate Workshop
+  version: 0.2.4
+  contact:
+    name: MVC, JPA and Hibernate Workshop
 
 servers:
   - url: http://localhost:4000
@@ -16,18 +18,20 @@ paths:
         - teachers
       summary: Create a new teacher
       description: Create a new teacher and add them to the list
+      operationId: createTeacher
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateTeacher'
       responses:
-        201:
+        '201':
+          description: Successfully created a new teacher
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Teacher'
-        400:
+        '400':
           description: "Could not create the new teacher, please check all required fields are correct."
           content:
             application/json:
@@ -38,38 +42,37 @@ paths:
         - teachers
       summary: Get all teachers
       description: Get all of the teachers from the list
+      operationId: getTeachers
       responses:
-        200:
+        '200':
+          description: Successfully return a list of all of the teachers
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AllTeachers'
-        404:
-          description: "No teachers matching that id were found"
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404'
+
   /teachers/{id}:
     get:
       tags:
         - teachers
       summary: Get a teacher
       description: Get a teacher by ID
+      operationId: getSpecificTeacher
       parameters:
         - name: id
           in: path
           description: The ID of the teacher to get
           required: true
           schema:
-            type: int
+            type: integer
       responses:
-        200:
+        '200':
+          description: Successfully get the specified teacher
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Teacher'
-        404:
+        '404':
           description: "No teachers matching that id were found"
           content:
             application/json:
@@ -80,31 +83,33 @@ paths:
         - teachers
       summary: Update a teacher
       description: Update the teacher with the given id in the list
+      operationId: updateTeacher
       parameters:
         - name: id
           in: path
           description: The ID of the teacher to update
           required: true
           schema:
-            type: int
+            type: integer
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateTeacher'
       responses:
-        201:
+        '201':
+          description: Successfully updated the specified teacher
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Teacher'
-        400:
+        '400':
           description: "Could not update the teacher's details, please check all required fields are correct."
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error400'
-        404:
+        '404':
           description: "No teachers matching that id were found"
           content:
             application/json:
@@ -115,20 +120,22 @@ paths:
         - teachers
       summary: Delete a teacher
       description: Delete the teacher with the given id from the list and return their details
+      operationId: deleteTeacher
       parameters:
         - name: id
           in: path
           description: The ID of the teacher to delete
           required: true
           schema:
-            type: int
+            type: integer
       responses:
-        200:
+        '200':
+          description: Successfully deleted the specified teacher
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Teacher'
-        404:
+        '404':
           description: "No teachers matching that id were found"
           content:
             application/json:
@@ -140,18 +147,20 @@ paths:
         - subjects
       summary: Create a new subject
       description: Create a new subject and add it to the list
+      operationId: createSubject
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateSubject'
       responses:
-        201:
+        '201':
+          description: Successfully created a new Subject
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Subject'
-        400:
+        '400':
           description: "Could not create the subject, please check all required fields are correct."
           content:
             application/json:
@@ -162,24 +171,21 @@ paths:
         - subjects
       summary: Get all subjects
       description: Get all of the subjects from the list
+      operationId: getSubjects
       responses:
-        200:
+        '200':
+          description: Successfully returned a list of all subjects
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AllSubjects'
-        404:
-          description: "No subjects matching that id were found"
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error404'
   /subjects/{id}:
     get:
       tags:
-        - subject
+        - subjects
       summary: Get a subject
       description: Get a subject by ID
+      operationId: getSpecificSubject
       parameters:
         - name: id
           in: path
@@ -188,12 +194,13 @@ paths:
           schema:
             type: int
       responses:
-        200:
+        '200':
+          description: Successfully returned the specified subject
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Subject'
-        404:
+        '404':
           description: "No subjects matching that id were found"
           content:
             application/json:
@@ -204,31 +211,33 @@ paths:
         - subjects
       summary: Update a subject
       description: Update the subject with the given id in the list
+      operationId: updateSubject
       parameters:
         - name: id
           in: path
           description: The ID of the subject to update
           required: true
           schema:
-            type: int
+            type: integer
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateSubject'
       responses:
-        201:
+        '201':
+          description: Successfully updated the specified subject
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Subject'
-        400:
+        '400':
           description: "Could not update the details of the subject, please check all required fields are correct."
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error400'
-        404:
+        '404':
           description: "No subjects matching that id were found"
           content:
             application/json:
@@ -239,20 +248,22 @@ paths:
         - subjects
       summary: Delete a subject
       description: Delete the subject with the given id from the list and return their details
+      operationId: deleteSubject
       parameters:
         - name: id
           in: path
           description: The ID of the subject to delete
           required: true
           schema:
-            type: int
+            type: integer
       responses:
-        200:
+        '200':
+          description: Successfully deleted the specified subject
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Subject'
-        404:
+        '404':
           description: "No subjects matching that id were found"
           content:
             application/json:
