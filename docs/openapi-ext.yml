@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Java API MVC, JPA and Hibernate Part 1 Workshop - Extension Criteria
+  title: Java API - MVC, JPA and Hibernate Part 1 Workshop - Extension Criteria
   description: Extension Criteria for Java, MVC, JPA and Hibernate Workshop
   version: 0.2.4
   contact:
