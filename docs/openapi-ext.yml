@@ -192,7 +192,7 @@ paths:
           description: The ID of the subject to get
           required: true
           schema:
-            type: int
+            type: integer
       responses:
         '200':
           description: Successfully returned the specified subject
