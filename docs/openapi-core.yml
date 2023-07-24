@@ -1,8 +1,10 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: Java API MVC, JPA and Hibernate Part 1 Workshop - Core Criteria
-  description: |-
-  version: 0.2.3
+  description: Core Criteria for Java API JPA Hibernate Workshop
+  version: 0.2.4
+  contact:
+    name: MVC, Java and Hibernate Workshop
 
 servers:
   - url: http://localhost:4000
@@ -15,13 +17,15 @@ paths:
         - teachers
       summary: Create a new teacher
       description: Create a new teacher and add them to the list
+      operationId: createTeacher
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CreateTeacher'
       responses:
-        201:
+        '201':
+          description: Successfully created a new Teacher
           content:
             application/json:
               schema:
@@ -31,8 +35,10 @@ paths:
         - teachers
       summary: Get all teachers
       description: Get all of the teachers from the list
+      operationId: getTeachers
       responses:
-        200:
+        '200':
+          description: Successfully return the list of teachers
           content:
             application/json:
               schema:
@@ -43,6 +49,7 @@ paths:
         - teachers
       summary: Get a teacher
       description: Get a teacher by ID
+      operationId: getSpecificTeacher
       parameters:
         - name: id
           in: path
@@ -51,7 +58,8 @@ paths:
           schema:
             type: integer
       responses:
-        200:
+        '200':
+          description: Successfully return the teacher specified
           content:
             application/json:
               schema:
@@ -61,6 +69,7 @@ paths:
         - teachers
       summary: Update a teacher
       description: Update the teacher with the given id in the list
+      operationId: updateTeacher
       parameters:
         - name: id
           in: path
@@ -74,7 +83,8 @@ paths:
             schema:
               $ref: '#/components/schemas/CreateTeacher'
       responses:
-        201:
+        '201':
+          description: Successfully updated the specified teacher
           content:
             application/json:
               schema:
@@ -84,6 +94,7 @@ paths:
         - teachers
       summary: Delete a teacher
       description: Delete the teacher with the given id from the list and return their details
+      operationId: deleteTeacher
       parameters:
         - name: id
           in: path
@@ -92,7 +103,8 @@ paths:
           schema:
             type: integer
       responses:
-        200:
+        '200':
+          description: Successfully deleted the specified teacher
           content:
             application/json:
               schema:
