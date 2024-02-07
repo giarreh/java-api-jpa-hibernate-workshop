@@ -15,7 +15,7 @@
 
 ## Goal
 
-We are going to create a database backed API, similar to the ones you have already developed previously, but this time we are going to look at ways of using Hibernate and JP so that we can use Java for the vast majority of the steps we will be using. That way we won't need to write SQL and use it to create our tables, which we then have to convert to java and design classes around.
+We are going to create a database backed API, similar to the ones you have already developed previously, but this time we are going to look at ways of using Hibernate and JPA so that we can use Java for the vast majority of the steps we will be using. That way we won't need to write SQL and use it to create our tables, which we then have to convert to java and design classes around.
 
 ## Setting up the Project
 
